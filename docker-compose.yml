@@ -3,6 +3,9 @@ services:
   db:
     container_name: sql-server-db
     image: microsoft/mssql-server-linux
+    volumes:
+      - ./data/.db:/var/opt/mssql
+      - ./var/opt/mssql/data
     ports:
       - "1433:1433"
     environment:
